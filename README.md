@@ -97,3 +97,43 @@ class TestDict(unittest.TestCase):
         d = Dict()
         with self.assertRaises(AttributeError):
             value = d.empty
+
+#doctest
+def fact(n):
+'''
+Calculate 1*2*3*...*n
+
+>>>fact(1)
+1
+>>>fact(10)
+3628800
+>>>fact(-1)
+Traceback (most recent call last):
+...
+ValueError
+'''
+if n<1:
+    raise ValueError
+if n==1:
+    return 1
+return n*fact(n-1)
+
+#write()
+with open('/Users/michael/test.txt', 'w') as f:
+    f.write('Hello World!')
+    
+#StringIO()
+from io import StringIO
+f=StringIO()
+f.write('hello')
+f.write(' ')
+f.write('world!')
+print(f.getvalue())
+
+from io import StringIO
+f=StirngIO('Hello!\nHi!\nGoodBye!')
+while True:
+    s=f.readline()
+    if s=='':
+        break
+    print(s.strip())
