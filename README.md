@@ -137,3 +137,16 @@ while True:
     if s=='':
         break
     print(s.strip())
+
+#pickle
+import pickle
+d=dict(name='Bob', age=20, score=88)
+pickle.pump(d)
+
+f=open('dump.txt','rb')
+d=pickle.dump(d,f)
+f.close()
+
+f=open('dump.txt','wb')
+d=pickle.load(f)
+f.close()
